@@ -10,7 +10,7 @@
   <div *ngIf="r.category.type==2">
     <app-quest [objDataPole]="r"></app-quest>
   </div>
-  <app-likes [objLikes]="r.like"></app-likes>
+  <app-likes [objLikes]="r.like" [myIndex]="i"></app-likes>
   <app-comments [objComments]="r.comments"></app-comments>
   <br>
   <hr>

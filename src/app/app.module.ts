@@ -21,6 +21,8 @@ import { SigninComponent } from './user/signin/signin.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { PostComponent } from './post/post.component';
 import { PostCardService } from './_services/postcardservice';
+import { AuthService } from './_services/authservice';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { PostCardService } from './_services/postcardservice';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [PostCardService],
+  providers: [PostCardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

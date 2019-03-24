@@ -1,4 +1,5 @@
 export class PostCardService {
+    allNav: number = 0;
     allPostCard: Object = [
         {
             "id": "5c7b7d432c41054697a51d9b",
