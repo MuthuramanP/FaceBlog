@@ -1,5 +1,4 @@
 export class PostCardService {
-    allNav: number = 0;
     allPostCard: Object = [
         {
             "id": "5c7b7d432c41054697a51d9b",
@@ -12,7 +11,7 @@ export class PostCardService {
                     {
                         "id": 0,
                         "name": "Humphrey",
-                        "url": "http://localhost:4200/assets/images/4.jpg"
+                        "url": "http://localhost:4200/assets/images/4.jpg",
                     },
                     {
                         "id": 1,

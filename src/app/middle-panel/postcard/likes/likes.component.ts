@@ -12,6 +12,7 @@ export class LikesComponent implements OnInit {
   @Input() objLikes;
   //iLike: number = 0;
   @Input() myIndex;
+  likeCnt: number = 0;
 
   constructor(public objauthService: AuthService, public objpostCard: PostCardService) {
     //console.log(objauthService.userData);  
@@ -30,6 +31,10 @@ export class LikesComponent implements OnInit {
     this.objpostCard.allPostCard[this.myIndex].like.count += 1;
     this.objpostCard.allPostCard[this.myIndex].like.data.push(this.objauthService.userData);
   }
-
+  onRemoveLikes() {
+    this.likeCnt = this.objpostCard.allPostCard[this.myIndex].like.data.length;
+    this.objpostCard.allPostCard[this.myIndex].like.count -= 1;
+    this.objpostCard.allPostCard[this.myIndex].like.data.splice(this.likeCnt - 1, 1);
+  }
 
 }

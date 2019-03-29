@@ -1,26 +1,32 @@
 <div class="wrapper">
   <div>
-    <a class="button button-link">Sign In</a>
-    <a class="tab; button button-link">Sign Up</a>
+    <a class="button button-link" (click)="onHome()">Home</a>
+    <a class="button button-link" (click)="onSignIn()">Sign In</a>
+    <a class="button button-link" (click)="onSignUp()">Sign Up</a>
   </div>
-  <div>
-    <div class="col-md-12">
-      <app-header></app-header>
-    </div>
+  
+  <div class="col-md-12">
+    <app-header></app-header>
   </div>
-  <div>
+  <div class="col-md-12">
     <div class="col-md-3">
-      <!-- <app-signin></app-signin>
-      <app-post></app-post> -->
+      <!-- <app-post></app-post> -->
       <app-left-panel></app-left-panel>
       <!-- <button (click)="GetOutputData($event)">Click for Output</button> -->
     </div>
     <div class="col-md-6">
-      <app-middle-panel [objData]="objDataMain" (objOutData)="GetOutputData($event)">
-      </app-middle-panel>
+      <div *ngIf="objService.allNav==0">
+        <app-middle-panel [objData]="objDataMain" (objOutData)="GetOutputData($event)">
+        </app-middle-panel>
+      </div>
+      <div *ngIf="objService.allNav==1">
+        <app-signin></app-signin>
+      </div>
+      <div *ngIf="objService.allNav==2">
+        <app-signup></app-signup>
+      </div>
     </div>
     <div class="col-md-3">
-      <!-- <app-signup></app-signup> -->
       <app-right-panel></app-right-panel>
       <!-- {{ myOutput }} -->
     </div>
@@ -28,4 +34,5 @@
   <div class="col-md-12">
     <app-footer></app-footer>
   </div>
+
 </div>

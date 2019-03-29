@@ -1,4 +1,6 @@
 export class AuthService {
+    allNav: number = 0;
+    
     userData: object = {
         "id": "67",
         "name": "Muthu",

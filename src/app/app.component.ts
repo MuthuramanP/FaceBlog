@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostCardService } from "./_services/postcardservice"
+import { AuthService } from "./_services/authservice"
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,8 +8,8 @@ import { PostCardService } from "./_services/postcardservice"
 export class AppComponent {
   title = 'FaceBlog';
   myOutput = "";
-  navVal = 0;
-  objDataMain : Object = [
+
+  objDataMain: Object = [
     {
       "_id": "5c5e74845eebbda0d1f18837",
       "title": "Cruz",
@@ -42,10 +42,22 @@ export class AppComponent {
     }
   ]
 
-  GetOutputData(ev)
-  {
+  GetOutputData(ev) {
     console.log(ev + " by Muthu");
     this.myOutput = ev + " by Muthu";
+  }
+  constructor(public objService: AuthService) {
+
+  }
+  onHome()
+  {
+    this.objService.allNav = 0;
+  }
+  onSignIn() {
+    this.objService.allNav = 1;
+  }
+  onSignUp() {
+    this.objService.allNav = 2;
   }
   // CallNav(argVal)
   // {

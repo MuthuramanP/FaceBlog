@@ -1,6 +1,8 @@
 <div>
-  <a>Likes: </a>
-  <button id="btnLikes" (click)="onAddLikes()">Add</button>
+  
+  <!-- <button id="btnLikes" (click)="onAddLikes()">Add</button> -->
+  <img class="button button-link" src="../../../../assets/images/like.png" (click)="onAddLikes()" width="30px" height="30px" title="Click to Like" />
+  <img class="button button-link" src="../../../../assets/images/dislike.png" (click)="onRemoveLikes()" width="30px" height="30px" title="Click to Dislike" />
   {{ objLikes.count }}
   <img *ngFor="let r of objLikes.data; let i=index" [src]="r.url" width="30px" height="30px" title="{{ r.name }}" />
   <br>

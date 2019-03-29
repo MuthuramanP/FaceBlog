@@ -10,7 +10,7 @@ export class PostcardComponent implements OnInit {
 
   objDataMiddle: object;
 
-  constructor(objService: PostCardService) { 
+  constructor(objService: PostCardService) {
     this.objDataMiddle = objService.allPostCard;
   }
 
